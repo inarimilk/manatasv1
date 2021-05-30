@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ideal Path</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/css/stylesheet.css">
+</head>
+<body>
+  
+    <%-include('header.ejs'); %>
+    
+  <div class="title">
+    <h1>ManaTas</h1>
+  </div>
+
+  <div class="todaygoal">
+    <h2>今月の目標</h2>
+    
+    <div class="goalsTable">
+    <table border="1" width="1000px">
+      <tr>
+        <th>目標</th>
+        <th>Sort1</th>
+        <th>達成率</th>
+      </tr>  
+    　<% target.forEach((today) => { %>
+            <tr>
+                <td><%= today.target %></td>
+                <td><%= today.sort %></td>
+                <td><%= today.progress %> %</td>
+            </tr>
+          <% }) %>
+    </table>
+      </div>
+      
+<!---------------------------
+      <div class="target-head">
+          <p>目標</p>
+          <p>sort</p>
+          <p>達成率</p>
+      </div>
+    <ul class="todaytarget">
+      <% target.forEach((today) => { %>
+            <li>
+              <div class="today-target-data">
+                <p class="todaytarget-target-column"><%= today.target %></p>
+                <p class="todaytarget-sort-column"><%= today.sort %></p>
+                  <p class="todaytarget-progress-column"><%= today.progress %> %</p>
+                  
+              </div>
+            </li>
+          <% }) %>
+      </ul>
+---------------------------->
+  </div>
+
+  <div class="todo">
+    <h2>今日のTo Do</h2>
+      <div class="todoTable">
+    <table border="1" width="1000px">
+      <tr>
+        <th>開始時間</th>
+        <th>終了時間</th>
+        <th>To Do</th>
+        <th>Sort1</th>
+        <th>Sort2</th>
+        </tr>  
+    　<% todo.forEach((today) => { %>
+            <tr>
+                <td><%= today.start %></td>
+                <td><%= today.end %></td>
+                <td><%= today.todo %></td>
+                <td><%= today.sort1 %></td>
+                <td><%= today.sort2 %></td>
+            </tr>
+          <% }) %>
+    </table>
+  </div>
+      
+<!-----------------------------
+      <div class="todo-head">
+          <p>開始時間</p>
+          <p>終了時間</p>
+          <p>To Do</p>
+          <p>sort1</p>
+          <p>sort2</p>
+      </div>
+    <ul class="todaytodo">
+      <% todo.forEach((todo) => { %>
+            <li>
+              <div class="today-todo-data">
+                <p class="todaytodo-start-column"><%= todo.start %></p>
+                  <p class="todaytodo-end-column"><%= todo.end %></p>
+                <p class="todaytodo-todo-column"><%= todo.todo %></p>
+                <p class="todaytodo-sort1-column"><%= todo.sort1 %></p>
+                 <p class="todaytodo-sort2-column"><%= todo.sort2 %></p>
+              </div>
+            </li>
+          <% }) %>
+      </ul>
+------------------------------->
+
+  </div>
+
+
+  <footer>
+    
+  </footer>
+</body>
+</html>
